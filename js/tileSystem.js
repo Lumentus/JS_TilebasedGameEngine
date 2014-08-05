@@ -10,6 +10,9 @@ var Tileset = function(name, tilesetFilePath, width, height, canvasContext, tile
 };
 
 Tileset.prototype.drawTile = function(tileX, tileY, posX, posY, drawSize) { // draws a tile to the canvas, posX and posY in tiles
+    if(drawSize == null || drawSize <= 0) {
+        drawSize = this.tilesize;
+    }
     if(this.ready && tileX <= this.width && tileY <= this.height) {
         this.canvasContext.drawImage(this.image, tileX * this.tilesize, tileY * this.tilesize, this.tilesize, this.tilesize,
             posX * drawSize, posY * drawSize, drawSize, drawSize);

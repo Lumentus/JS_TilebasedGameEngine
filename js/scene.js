@@ -1,7 +1,7 @@
 var Scene = { 
 	previousScene: '',
-	update: function() {
+	update: function(delta) {
 	},
-	drawScene: function() {
+	drawScene: function(canvasContext) {
 	}
 }
