@@ -1,9 +1,9 @@
-var Tileset = function(name, tilesetFilePath, width, height, canvasContext, tilesize) { // class Tileset, width and heigth in tiles
+var Tileset = function(name, tilesetFilepath, tilesize, width, height, canvasContext) { // class Tileset, width and heigth in tiles
     this.name = name; // what ever the tileset is called
     this.width = width;
     this.height = height;
     this.canvasContext = canvasContext;
-    this.tilesetFilePath = tilesetFilePath;
+    this.tilesetFilepath = tilesetFilepath;
     this.tilesize = tilesize;
     this.ready = false; // is the image loaded correctly
     this.image = null;
@@ -18,14 +18,14 @@ Tileset.prototype.drawTile = function(tileX, tileY, posX, posY, drawSize) { // d
             posX * drawSize, posY * drawSize, drawSize, drawSize);
     }
 };
-Tileset.prototype.load = function(tilesetObj) {
+Tileset.prototype.load = function() {
     if(!this.ready) {
-        var self = tilesetObj; // context hack
+        var self = this; // context hack
         this.image = new Image(); // the image
         this.image.onload = function() {
             self.ready = true; // when loading is finished set ready to true
         };
-        this.image.src = this.tilesetFilePath; // start the loading
+        this.image.src = this.tilesetFilepath; // start the loading
     }
 };
 

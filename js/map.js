@@ -23,10 +23,8 @@ Tile.prototype.hasEventOnOver = function() {
 * tiles: two dimentional array with Tile objects(tiles[x][y])
 * autostartEvents: array of functions that will be executed when the map is loaded(visible for the first time)(might be used to execute parallel processes)
 */
-var GameMap = function(usedTilesets, tiles, autostartEvents, width, height) {
+var GameMap = function(usedTilesets, tiles, autostartEvents) {
     this.usedTilesets = usedTilesets;
-    this.width = width;
-    this.height = height;
     this.tiles = tiles;
     this.autostartEvents = autostartEvents; // these events will be called with the map object as first argument
     this.triggered = false;
@@ -35,20 +33,21 @@ var GameMap = function(usedTilesets, tiles, autostartEvents, width, height) {
 GameMap.prototype.triggerAutostartEvents = function() {
     if(!this.triggered) {
         this.triggered = true;
-        for(var i = 0; i < this.autostartEvents.length; i++) {
-            this.autostartEvents[i](this);
+        if(this.autostartEvents != null) {
+            for(var i = 0; i < this.autostartEvents.length; i++) {
+                this.autostartEvents[i](this);
+            }
         }
     }
 };
 
 GameMap.prototype.draw = function(startX, startY, width, height, view) {
-    if((startX+width)  > this.width) {
-        width = this.width-startX;
+    if((startX+width) > this.tiles.length) {
+        width = this.tiles.length-startX;
     }
-    if((startY+height)  > this.width) {
-        height = this.height-startY;
+    if((startY+height) > this.tiles[0].length) {
+        height = this.tiles[0].length-startY;
     }
-
     var tile = null;
     for(var x = startX; x < (startX+width); x++) {
         for(var y = startY; y < (startY+height); y++) {

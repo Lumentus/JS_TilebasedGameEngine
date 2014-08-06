@@ -1,6 +1,9 @@
-var Game = function() {
+var w = window;
+var requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+
+var Game = function(canvasContext) {
 	this.activeScene = null;
-    this.canvasContext = null;
+    this.canvasContext = canvasContext;
 }
 /**
 Processes inputs(might not be neccessary)
@@ -26,16 +29,17 @@ function
 */
 Game.prototype.mainLoop = function() {
     var now = Date.now();
+    var then = then || now;
     var delta = now - then;
 
-    this.getInput();
-    this.update(delta / 1000);
-    this.redraw();
+    Game.prototype.obj.getInput();
+    Game.prototype.obj.update(delta / 1000);
+    Game.prototype.obj.redraw();
 
     then = now;
 
     // Request to do this again ASAP
-    requestAnimationFrame(this.mainLoop);
+    requestAnimationFrame(Game.prototype.obj.mainLoop);
 }
 /**
 Sets the scene, that will receive the inputs to process them and which is asked to draw and update itself
@@ -48,14 +52,11 @@ Initilizes the game at the starting map, with a certain active Scene, that will 
 startX and startY
 */
 Game.prototype.initialize = function(activeScene) {
-    var canvas = document.createElement("canvas");
-    this.canvasContext = canvas.getContext("2d"); // the context used to draw stuff on the canvas
-    canvas.width = 512;
-    canvas.height = 480;
-    document.body.appendChild(canvas);
 	// set the activeScene
 	this.activeScene = activeScene;
 	// set eventhandler
+    // save this object
+    Game.prototype.obj = this;
 }
 
 Game.prototype.start = function() {
