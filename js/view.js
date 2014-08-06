@@ -19,5 +19,5 @@ View.prototype.update = function() {
 };
 View.prototype.drawScene = function(canvasContext) {
     canvasContext.fillRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
-    this.activeMap.draw(0, 0, 16, 15, this);
+    this.activeMap.draw(0, 0, 16, 15);
 };
