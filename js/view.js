@@ -4,7 +4,7 @@ var View = function(tilesets, maps) {
     this.activeMap = null;
 };
 
-View.prototype = Scene;
+View.prototype = new Scene();
 View.prototype.constructor = View;
 
 View.prototype.activateMap = function(mapID) {

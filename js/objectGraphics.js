@@ -3,12 +3,12 @@ var ObjectGraphics = function(name, objectGraphicsFilepath, width, height, canva
     this.width = width;
     this.height = height;
     this.canvasContext = canvasContext;
-    this.tilesetFilepath = tilesetFilepath;
+    this.tilesetFilepath = objectGraphicsFilepath;
     this.ready = false; // is the image loaded correctly
     this.image = null;
 }
 
-ObjectGraphics.prototype = Tileset;
+ObjectGraphics.prototype = new Tileset();
 ObjectGraphics.prototype.constructor = ObjectGraphics;
 
 ObjectGraphics.prototype.drawObject = function(objectX, objectY, objectWidth, objectHeight, orientation, animationStep, posX, posY, drawFactor) {
@@ -21,10 +21,6 @@ ObjectGraphics.prototype.drawObject = function(objectX, objectY, objectWidth, ob
         this.canvasContext.drawImage(this.image, startX * this.tilesize, startY * this.tilesize, this.tilesize * objectWidth, this.tilesize * objectHeight,
             posX * this.tilesize * drawFactor, posY * this.tilesize * drawFactor, this.tilesize * drawFactor * objectWidth, this.tilesize * drawFactor * objectHeight);
     }
-};
-
-ObjectGraphics.prototype.drawObjectPart = function(imageX, imageY, imageWidth, imageHeight, orientation, animationStep, posX, posY, drawSize) {
-
 };
 
 ObjectGraphics.prototype.orientationDown = 0;

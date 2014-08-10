@@ -18,15 +18,15 @@ canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 document.body.appendChild(canvas);
 // Add the tilesets
-tilesets[0] = new Tileset("base", "tilesets/base.png", 16, 12, canvasContext);
+tilesets[0] = new ObjectGraphics("base", "tilesets/base.png", 16, 12, canvasContext);
 // Create the map objects
 graphicalElements[0] = new Array();
-graphicalElements[0].push(new Tile(tilesets[0], 2, 2, 0, 0));
+/*graphicalElements[0].push(new Tile(tilesets[0], 2, 2, 0, 0));
 graphicalElements[0].push(new Tile(tilesets[0], 2, 3, 0, 1));
 graphicalElements[0].push(new Tile(tilesets[0], 3, 2, 1, 0));
-graphicalElements[0].push(new Tile(tilesets[0], 3, 3, 1, 1));
+graphicalElements[0].push(new Tile(tilesets[0], 3, 3, 1, 1));*/
 graphicalElements[0].push(new TileRect(tilesets[0], 10, 10, 5, 5, 3, 3));
-maps[0] = new GameMap([0], graphicalElements[0], null, null);
+maps[0] = new GameMap([0], graphicalElements[0], new Array(new GameObject(0, 1, false, tilesets[0], 2, 2, 2, 2, 0, false, null)), null);
 // Create the view scene
 var view = new View(tilesets, maps);
 view.activateMap(0);

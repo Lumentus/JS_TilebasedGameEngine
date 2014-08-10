@@ -18,7 +18,7 @@ GameObject.prototype.draw = function(startX, startY, width, height) {
         if(!this.image.ready) {
             this.image.load();
         } else {
-            this.image.drawObject(this.imageX, this.imageY, this.imageWidth, this.imageHeight, this.orientation, this.animationStep, this.posX, this.posY);
+            this.image.drawObject(this.imageX, this.imageY, this.imageWidth, this.imageHeight, this.orientation, this.animationStep, this.posX, this.posY-this.imageHeight+1);
         }
     }
 };
