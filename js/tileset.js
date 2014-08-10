@@ -8,13 +8,13 @@ var Tileset = function(name, tilesetFilepath, width, height, canvasContext) { //
     this.image = null;
 };
 
-Tileset.prototype.drawTile = function(tileX, tileY, posX, posY, drawSize) { // draws a tile to the canvas, posX and posY in tiles
-    if(drawSize == null || drawSize <= 0) {
-        drawSize = this.tilesize;
+Tileset.prototype.drawTile = function(tileX, tileY, posX, posY, drawFactor) { // draws a tile to the canvas, posX and posY in tiles
+    if(drawFactor == null || drawFactor <= 0) {
+        drawFactor = 1.0;
     }
     if(this.ready && tileX <= this.width && tileY <= this.height) {
-        this.canvasContext.drawImage(this.image, tileX * Tileset.prototype.tilesize, tileY * Tileset.prototype.tilesize, Tileset.prototype.tilesize, Tileset.prototype.tilesize,
-            posX * drawSize, posY * drawSize, drawSize, drawSize);
+        this.canvasContext.drawImage(this.image, tileX * this.tilesize, tileY * this.tilesize, this.tilesize, this.tilesize,
+            posX * this.tilesize * drawFactor, posY * this.tilesize * drawFactor, this.tilesize * drawFactor, this.tilesize * drawFactor);
     }
 };
 Tileset.prototype.load = function() {

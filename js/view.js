@@ -13,7 +13,6 @@ View.prototype.activateMap = function(mapID) {
         this.tilesets[this.maps[mapID].usedTilesets[i]].load();
     }
 };
-
 View.prototype.update = function(delta) {
     this.activeMap.update(delta);
 };

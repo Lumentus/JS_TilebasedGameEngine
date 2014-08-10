@@ -13,16 +13,18 @@ var GameObject = function(posX, posY, passable, image, imageX, imageY, imageWidt
     this.events = events;
 };
 
-GameObject.prototype.draw = function() {
+GameObject.prototype.draw = function(startX, startY, width, height) {
     if(this.image != null) {
-        this.image.draw(this.imageX, this.imageY, this.orientation, this.animationStep, this.posX, this.posY);
+        if(!this.image.ready) {
+            this.image.load();
+        } else {
+            this.image.drawObject(this.imageX, this.imageY, this.imageWidth, this.imageHeight, this.orientation, this.animationStep, this.posX, this.posY);
+        }
     }
 };
-
 GameObject.prototype.update = function(delta) {
 
 };
-
 GameObject.prototype.processInput = function() {
 
 };

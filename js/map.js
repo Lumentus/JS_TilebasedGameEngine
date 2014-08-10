@@ -21,17 +21,21 @@ GameMap.prototype.triggerAutostartEvents = function() {
         }
     }
 };
-
 GameMap.prototype.draw = function(startX, startY, width, height) {
-    for(var i = 0; i < this.graphicalElements.length; i++) {
-        this.graphicalElements[i].draw(startX, startY, width, height);
+    if(this.graphicalElements != null) {
+        for(var i = 0; i < this.graphicalElements.length; i++) {
+            this.graphicalElements[i].draw(startX, startY, width, height);
+        }
+    }
+    if(this.objects != null) {
+        for(var i = 0; i < this.objects.length; i++) {
+            this.objects[i].draw(startX, startY, width, height);
+        }
     }
 };
-
 GameMap.prototype.addObject = function(object) {
     this.objects.push(object);
 };
-
 GameMap.prototype.removeObject = function(object) {
     for(var i = 0; i < this.objects.length; i++) {
         if(this.objects[i] == object) {
@@ -39,7 +43,6 @@ GameMap.prototype.removeObject = function(object) {
         }
     }
 };
-
 GameMap.prototype.update = function(delta) {
     for(var i = 0; i < this.objects.length; i++) {
         this.objects[i].update(delta);
