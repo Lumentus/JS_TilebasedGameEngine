@@ -5,7 +5,7 @@
 /* global TileRect */
 /* global View */
 /* global Game */
-var tilesize = 32; // the size in of one tile in pixels
+Tileset.prototype.setTilesize(32); // the size in of one tile in pixels
 var canvasWidth = 512;
 var canvasHeight = 480;
 var tilesets = new Array(1);
@@ -18,7 +18,7 @@ canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 document.body.appendChild(canvas);
 // Add the tilesets
-tilesets[0] = new Tileset("base", "tilesets/base.png", tilesize, 16, 12, canvasContext);
+tilesets[0] = new Tileset("base", "tilesets/base.png", 16, 12, canvasContext);
 // Create the map objects
 graphicalElements[0] = new Array();
 graphicalElements[0].push(new Tile(tilesets[0], 2, 2, 0, 0));

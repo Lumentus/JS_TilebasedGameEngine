@@ -39,4 +39,4 @@ TileRect.prototype.draw = function(startX, startY, width, height) {
             }
         }
     }
-}
+};

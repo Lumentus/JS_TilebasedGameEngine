@@ -14,10 +14,13 @@ View.prototype.activateMap = function(mapID) {
     }
 };
 
-View.prototype.update = function() {
-    // what ever to do here:D
+View.prototype.update = function(delta) {
+    this.activeMap.update(delta);
+};
+View.prototype.processInput = function() {
+
 };
 View.prototype.drawScene = function(canvasContext) {
     canvasContext.fillRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
-    this.activeMap.draw(0, 0, 16, 15);
+    this.activeMap.draw(0, 0, canvasContext.canvas.width/Tileset.prototype.tilesize, canvasContext.canvas.height/Tileset.prototype.tilesize);
 };
