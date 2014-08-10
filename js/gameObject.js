@@ -28,3 +28,6 @@ GameObject.prototype.update = function(delta) {
 GameObject.prototype.processInput = function() {
 
 };
+GameObject.prototype.blocking = function(x, y) {
+
+};

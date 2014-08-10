@@ -2,5 +2,5 @@ var Menu = function() {
 	
 }
 
-Menu.prototype = new Scene();
+Menu.prototype = Scene;
 Menu.prototype.constructor = Menu;

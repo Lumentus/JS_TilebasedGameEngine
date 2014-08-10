@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"tile",
+				"tilesets"
+			],
+			[
+				"g",
+				"graphicalElements"
+			],
+			[
+				"object",
+				"objectHeight"
+			],
+			[
+				"ob",
+				"objectWidth"
+			],
+			[
+				"d",
+				"drawFactor"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"function",
+				"function"
+			],
+			[
+				"canvas",
+				"canvas"
+			],
+			[
 				"dr",
 				"drawTile"
 			],
@@ -76,10 +108,6 @@
 				"createCanvas"
 			],
 			[
-				"canvas",
-				"canvasContext"
-			],
-			[
 				"s",
 				"script"
 			]
@@ -91,7 +119,7 @@
 			"file": "main.html",
 			"settings":
 			{
-				"buffer_size": 612,
+				"buffer_size": 757,
 				"line_ending": "Windows",
 				"name": "<html>"
 			}
@@ -100,31 +128,40 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 1352,
+				"buffer_size": 1450,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/tileSystem.js",
+			"file": "js/tileset.js",
 			"settings":
 			{
-				"buffer_size": 1944,
+				"buffer_size": 1457,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/object.js",
+			"file": "js/objectGraphics.js",
 			"settings":
 			{
-				"buffer_size": 698,
-				"line_ending": "Windows"
+				"buffer_size": 1349,
+				"line_ending": "Windows",
+				"name": "var objectGraphics = function() {"
 			}
 		},
 		{
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 1129,
+				"buffer_size": 1819,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/gameObject.js",
+			"settings":
+			{
+				"buffer_size": 1066,
 				"line_ending": "Windows"
 			}
 		},
@@ -140,7 +177,15 @@
 			"file": "js/view.js",
 			"settings":
 			{
-				"buffer_size": 665,
+				"buffer_size": 823,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/menu.js",
+			"settings":
+			{
+				"buffer_size": 87,
 				"line_ending": "Windows"
 			}
 		}
@@ -233,14 +278,17 @@
 	},
 	"file_history":
 	[
+		"/D/HTML_RPGMaker/js/menu.js",
 		"/D/HTML_RPGMaker/js/graphicalElements.js",
+		"/D/HTML_RPGMaker/.gitignore",
+		"/D/HTML_RPGMaker/js/scene.js",
+		"/D/HTML_RPGMaker/js/object.js",
+		"/D/HTML_RPGMaker/js/tileSystem.js",
 		"/D/HTML_RPGMaker/js/view.js",
 		"/D/HTML_RPGMaker/js/engine.js",
-		"/D/HTML_RPGMaker/js/scene.js",
 		"/D/HTML_RPGMaker/js/game.js",
 		"/C/Users/Lumentus/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
 		"/C/Users/Lumentus/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/D/HTML_RPGMaker/js/tileSystem.js",
 		"/C/Users/Lumentus/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/JSHint.sublime-settings",
 		"/C/Users/Lumentus/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/D/HTML_RPGMaker/html_rpgmaker.sublime-workspace",
@@ -264,6 +312,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Faktor",
+			"Size",
+			"image",
 			"drawElements",
 			"tiles",
 			"Tiles",
@@ -295,7 +346,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -304,15 +355,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 612,
+						"buffer_size": 757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								155,
-								155
+								314,
+								314
 							]
 						],
 						"settings":
@@ -324,7 +375,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -333,15 +384,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1352,
+						"buffer_size": 1450,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								246,
-								246
+								1177,
+								1177
 							]
 						],
 						"settings":
@@ -357,19 +408,164 @@
 				},
 				{
 					"buffer": 2,
-					"file": "js/tileSystem.js",
+					"file": "js/tileset.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1944,
+						"buffer_size": 1457,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								650,
-								650
+								892,
+								892
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/objectGraphics.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1165,
+								1165
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var objectGraphics = function() {",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/map.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1021,
+								1021
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/gameObject.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1066,
+								1066
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1691,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								838,
+								838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/view.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 823,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
 							]
 						],
 						"settings":
@@ -386,20 +582,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "js/object.js",
+					"buffer": 8,
+					"file": "js/menu.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 698,
+						"buffer_size": 87,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								698,
-								698
+								87,
+								87
 							]
 						],
 						"settings":
@@ -411,92 +607,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "js/map.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								500
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/game.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1691,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								406,
-								406
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/view.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 665,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								662,
-								662
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -586,7 +696,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,
-	"side_bar_width": 150.0,
+	"side_bar_width": 164.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
