@@ -3,7 +3,9 @@
 * graphicalElements: all elements that will be drawn and are part of this map
 * autostartEvents: array of functions that will be executed when the map is loaded(visible for the first time)(might be used to execute parallel processes)
 */
-var GameMap = function(usedTilesets, graphicalElements, objects, autostartEvents) {
+var GameMap = function(width, height, usedTilesets, graphicalElements, objects, autostartEvents) {
+    this.width = width;
+    this.height = height;
     this.usedTilesets = usedTilesets;
     this.graphicalElements = graphicalElements;
     this.objects = objects;
@@ -48,3 +50,15 @@ GameMap.prototype.update = function(delta) {
         this.objects[i].update(delta);
     }
 };
+GameMap.prototype.isBlocked = function(x, y) {
+    if(x < 0 || y < 0 || x >= this.width || y >= this.height) {
+        return true;
+    }
+    for(var i = 0; i < this.objects.length; i++) {
+        if(this.objects[i].blocking(x, y)) {
+            console.log("Test2");
+            return true;
+        }
+    }
+    return false;
+}

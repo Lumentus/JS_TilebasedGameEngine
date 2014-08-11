@@ -23,7 +23,7 @@ ObjectGraphics.prototype.drawObject = function(objectX, objectY, objectWidth, ob
     }
 };
 
-ObjectGraphics.prototype.orientationDown = 0;
-ObjectGraphics.prototype.orientationLeft = 1;
-ObjectGraphics.prototype.orientationRight = 2;
+ObjectGraphics.prototype.orientationRight = 0;
+ObjectGraphics.prototype.orientationDown = 1;
+ObjectGraphics.prototype.orientationLeft = 2;
 ObjectGraphics.prototype.orientationUp = 3;

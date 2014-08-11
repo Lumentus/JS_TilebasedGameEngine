@@ -2,6 +2,8 @@ var View = function(tilesets, maps) {
     this.tilesets = tilesets;
     this.maps = maps;
     this.activeMap = null;
+    this.activeObject = null;
+    View.prototype.obj = this;
 };
 
 View.prototype = Scene;
@@ -16,8 +18,8 @@ View.prototype.activateMap = function(mapID) {
 View.prototype.update = function(delta) {
     this.activeMap.update(delta);
 };
-View.prototype.processInput = function() {
-
+View.prototype.processInput = function(keysDown) {
+    this.activeObject.processInput(keysDown);
 };
 View.prototype.drawScene = function(canvasContext) {
     canvasContext.fillRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);

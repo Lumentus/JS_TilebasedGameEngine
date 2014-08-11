@@ -19,17 +19,16 @@ canvas.height = canvasHeight;
 document.body.appendChild(canvas);
 // Add the tilesets
 tilesets[0] = new ObjectGraphics("base", "tilesets/base.png", 16, 12, canvasContext);
+tilesets[1] = new ObjectGraphics("testActors", "tilesets/testActors.png", 12, 8, canvasContext);
 // Create the map objects
 graphicalElements[0] = new Array();
-/*graphicalElements[0].push(new Tile(tilesets[0], 2, 2, 0, 0));
-graphicalElements[0].push(new Tile(tilesets[0], 2, 3, 0, 1));
-graphicalElements[0].push(new Tile(tilesets[0], 3, 2, 1, 0));
-graphicalElements[0].push(new Tile(tilesets[0], 3, 3, 1, 1));*/
-graphicalElements[0].push(new TileRect(tilesets[0], 10, 10, 5, 5, 3, 3));
-maps[0] = new GameMap([0], graphicalElements[0], new Array(new GameObject(0, 1, false, tilesets[0], 2, 2, 2, 2, 0, false, null)), null);
+graphicalElements[0].push(new TileRect(tilesets[0], 10, 10, 0, 0, 16, 15));
+var objects = new Array(new PlayerControledObject(0, 0, true, tilesets[1], 0, 0, 1, 1, 0, 3), new GameObject(1, 1, true, tilesets[0], 2, 2, 2, 2, 0, 0, false, null));
+maps[0] = new GameMap(16, 15, [0], graphicalElements[0], objects, null);
 // Create the view scene
 var view = new View(tilesets, maps);
 view.activateMap(0);
+view.activeObject = objects[0];
 // Create the game object
 var game = new Game(canvasContext);
 // initialize and start the game

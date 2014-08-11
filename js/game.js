@@ -4,18 +4,16 @@ var requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationF
 var Game = function(canvasContext) {
 	this.activeScene = null;
     this.canvasContext = canvasContext;
-}
-/**
-Processes inputs(might not be neccessary)
-*/
-Game.prototype.getInput = function() {
-
+    this.keysDown = new Array();
+    // save this object
+    Game.prototype.obj = this;
 }
 /**
 Asks all objects to update their information
 */
 Game.prototype.update = function(delta) {
-
+    this.activeScene.processInput(this.keysDown);
+    this.activeScene.update(delta);
 }
 /**
 Asks the active scene to redraw the game with the updated information
@@ -29,14 +27,13 @@ function
 */
 Game.prototype.mainLoop = function() {
     var now = Date.now();
-    var then = then || now;
-    var delta = now - then;
+    Game.prototype.obj.then = Game.prototype.obj.then != null ? Game.prototype.obj.then : now;
+    var delta = now - Game.prototype.obj.then;
 
-    Game.prototype.obj.getInput();
-    Game.prototype.obj.update(delta / 1000);
+    Game.prototype.obj.update(delta);
     Game.prototype.obj.redraw();
 
-    then = now;
+    Game.prototype.obj.then = now;
 
     // Request to do this again ASAP
     requestAnimationFrame(Game.prototype.obj.mainLoop);
@@ -54,9 +51,16 @@ startX and startY
 Game.prototype.initialize = function(activeScene) {
 	// set the activeScene
 	this.activeScene = activeScene;
-	// set eventhandler
-    // save this object
-    Game.prototype.obj = this;
+    // Context hack
+    var self = this;
+    // set eventhandler
+    addEventListener("keydown", function (e) {
+        self.keysDown[e.keyCode] = true;
+    }, false);
+
+    addEventListener("keyup", function (e) {
+        delete self.keysDown[e.keyCode];
+    }, false);
 }
 
 Game.prototype.start = function() {
