@@ -1,16 +1,18 @@
-var PlayerControledObject = function(posX, posY, passable, image, imageX, imageY, imageWidth, imageHeight, orientation, numberAnimationSteps) {
+var PlayerControledObject = function(posX, posY, passable, objectWidth, objectHeight, image, imageX, imageY, orientation, numberAnimationSteps, movespeedDivider) {
     this.posX = posX;
     this.posY = posY;
     this.passable = passable;
     this.image = image;
     this.imageX = imageX;
     this.imageY = imageY;
-    this.imageWidth = imageWidth;
-    this.imageHeight = imageHeight;
+    this.objectWidth = objectWidth;
+    this.objectHeight = objectHeight;
     this.orientation = orientation;
     this.isPlayerControled = true;
     this.animationStep = 0;
     this.numberAnimationSteps = numberAnimationSteps;
+    this.movespeedDivider = movespeedDivider != null ? movespeedDivider : 1;
+    this.timePerMove = 500 / this.movespeedDivider;
     this.events = null;
     this.inMove = false;
     this.rangeLeft = 0;
@@ -36,6 +38,7 @@ PlayerControledObject.prototype.processInput = function(keysDown) {
             this.move(ObjectGraphics.prototype.orientationRight);
         } else if(keysDown[13]) { // Enter Key
             // interact with object in fron
+            View.prototype.getObject().showTextbox("Hallo!\nTest!", 10, 10);
         }
     }
 };

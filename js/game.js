@@ -6,7 +6,7 @@ var Game = function(canvasContext) {
     this.canvasContext = canvasContext;
     this.keysDown = new Array();
     // save this object
-    Game.prototype.obj = this;
+    this.setObject(this);
 }
 /**
 Asks all objects to update their information
@@ -27,16 +27,16 @@ function
 */
 Game.prototype.mainLoop = function() {
     var now = Date.now();
-    Game.prototype.obj.then = Game.prototype.obj.then != null ? Game.prototype.obj.then : now;
-    var delta = now - Game.prototype.obj.then;
+    Game.prototype.obj.then = Game.prototype.getObject().then != null ? Game.prototype.getObject().then : now;
+    var delta = now - Game.prototype.getObject().then;
 
-    Game.prototype.obj.update(delta);
-    Game.prototype.obj.redraw();
+    Game.prototype.getObject().update(delta);
+    Game.prototype.getObject().redraw();
 
-    Game.prototype.obj.then = now;
+    Game.prototype.getObject().then = now;
 
     // Request to do this again ASAP
-    requestAnimationFrame(Game.prototype.obj.mainLoop);
+    requestAnimationFrame(Game.prototype.getObject().mainLoop);
 }
 /**
 Sets the scene, that will receive the inputs to process them and which is asked to draw and update itself
@@ -66,4 +66,10 @@ Game.prototype.initialize = function(activeScene) {
 Game.prototype.start = function() {
 	// start game loop
     requestAnimationFrame(this.mainLoop);
+}
+Game.prototype.getObject = function() {
+    return Game.prototype.obj;
+};
+Game.prototype.setObject = function(obj) {
+    Game.prototype.obj = obj;
 }

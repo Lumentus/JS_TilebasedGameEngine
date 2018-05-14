@@ -56,9 +56,8 @@ GameMap.prototype.isBlocked = function(x, y) {
     }
     for(var i = 0; i < this.objects.length; i++) {
         if(this.objects[i].blocking(x, y)) {
-            console.log("Test2");
             return true;
         }
     }
     return false;
-}
+};
