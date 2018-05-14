@@ -1,5 +1,8 @@
-#Cant upload this stuff to public while testing
+# Cant upload this stuff to public while testing
 tilesets/*
+# should not upload sublime project stuff
+*.sublime-project
+*.sublime-workspace
 
 #################
 ## Eclipse
